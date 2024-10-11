@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thijs van den Broek</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="titleicon" href="images/t.webp"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="app.js" defer></script>
+  </head>
+  <body>
+    <img class="none" src="images/icon-192x192.png" alt="">
+    <script>
+     (function() {
+      const savedMode = localStorage.getItem('darkMode');
+      const isDarkMode = savedMode === 'dark';
+      document.documentElement.classList.toggle('dark-theme', isDarkMode);
+    })();
+    </script>
+    
+    <main class="container-main">
+      <aside class="aside">
+        <div class="logo">
+          <a href="#"><span>T</span>hijs</a>
+        </div>
+        <div class="toggle">
+          <span></span>
+        </div>
+        <nav class="nav">
+          <ul>
+            <li>
+              <a href="#home" id="homeNav" class="active"><i class="fa fa-home"></i>Home</a>
+            </li>
+            <li>
+              <a href="#about"><i class="fa fa-user"></i>About</a>
+            </li>
+            <li id="outcome" class="tooltip">
+              <a href="#skills"><i class="fa fa-brain"></i>Skills</a>
+            </li>
+            <li id="project" class="tooltip2">
+              <a href="#projects"><i class="fa fa-list"></i>Projects</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="socials">
+          <a
+            href="https://www.instagram.com/thijsvdbroek27?igsh=MWZibjB6NzdxNHJ0cw=="
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a href="https://www.facebook.com/thijs.vandenbroek.94"
+            ><i class="fa-brands fa-facebook"></i
+          ></a>
+          <a href="https://www.youtube.com/channel/UCBW35VZHEL9annDyu3Ci5MQ"
+            ><i class="fa-brands fa-youtube"></i
+          ></a>
+          <a target="_blank" href="https://git.fhict.nl/I523591/paragon"
+          ><i class="fa-brands fa-square-gitlab"></i></a>
+        </div>
+        <div class="download">
+        <button class="face button tooltip3" id="btnAdd" style="display: none;">Install <i class="fa-solid fa-cloud-arrow-down"></i></button>
+      </div>
+      </aside>
+      <section class="pri-content">
+        <article class="home active section" id="home">
+          <div class="container">
+            <div class="row">
+              <div class="home-text padd-15">
+                <h3 class="welcome">
+                  Hello, my name is
+                  <span class="name">Thijs van den Broek</span>
+                </h3>
+                <h3 class="about-short">
+                  I am a <span class="typing">web developer</span>
+                </h3>
+                <p>
+                  I'm a student at Fontys University in Eindhoven, specializing in Information and Communication Technology with a focus on media.
+                </p>
+                <a href="#outcomes" class="btn contact-me">Outcomes</a>
+              </div>
+              <div class="home-img padd-15 home-img-container">
+                <img src="images/prof.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </article>
+        <section class="about section" id="about">
+          <h2 class="about-title">About <span class="span">Me</span></h2>
+          <figure class="home-imgg">
+            <div class="outer-circle">
+              <span class="inner-circle"
+                ><img
+                  src="images/profilemain-removebg-preview.png"
+                  alt="Profile-picture"
+              /></span>
+            </div>
+          </figure>
+          <div class="about-content padd-15">
+            <h2>Media student</h2>
+            <p class="padd-15">
+              As an ICT student in the media profile, I am passionate about creating beautiful and functional user interfaces. My goal is to become a frontend developer, and I have a solid foundation in HTML and CSS. With an eye for design and user experience, I work on several projects to stay up-to-date with the latest developments in the field. I am excited about the future of frontend development and eager to contribute my skills to the industry.
+            </p>
+            <div class="btn-box btns">
+              <a href="#projects" class="btn contact-me2">Projects</a>
+            </div>
+          </div>
+        </section>
+
+
+
+        <section class="section skills" id="skills">
+          <h2 class="about-title skill-title">My <span class="span">Skills</span></h2>
+          <div class="skill-container">
+            <div class="skill-row" id="skillscontainer">
+              <div class="skillbar">
+                <div class="skillinfo">
+                  <img src="images/figma.svg" alt="">
+                  <span>figma</span>
+                </div>
+              </div>
+              <div class="skillbar">
+                <div class="skillinfo">
+                  <img src="images/js.svg" alt="">
+                  <span>Javascript</span>
+                </div>
+              </div>
+              <div class="skillbar">
+                <div class="skillinfo">
+                  <img src="images/html.svg" alt="">
+                  <span>HTML</span>
+                </div>
+              </div>
+              <div class="skillbar">
+                <div class="skillinfo">
+                  <img src="images/css.svg" alt="">
+                  <span>CSS</span>
+                </div>
+              </div>
+              <div class="skillbar">
+                <div class="skillinfo">
+                  <img src="images/kotlin.svg" alt="">
+                  <span>Kotlin</span>
+                </div>
+              </div>
+              <div class="skillbar">
+                <div class="skillinfo">
+                  <img src="images/xml.svg" alt="">
+                  <span>XML</span>
+                </div>
+              </div>
+              <div class="skillbar">
+                <div class="skillinfo">
+                  <img src="images/ai.svg" alt="">
+                  <span>illustrator</span>
+                </div>
+              </div>
+              <div class="skillbar">
+                <div class="skillinfo">
+                  <img src="images/id.svg" alt="">
+                  <span>Indesign</span>
+                </div>
+              </div>
+              <div class="skillbar">
+                <div class="skillinfo">
+                  <img src="images/ps.svg" alt="">
+                  <span>Photoshop</span>
+                </div>
+              </div>
+              <div class="skillbar">
+                <div class="skillinfo">
+                  <img src="images/google.svg" alt="">
+                  <span>google workspace</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+
+        <section class="projects section" id="projects">
+          <h2 class="about-title skill-title">Recent <span class="span">Projects</span></h2>
+          <div class="projects-container containerp grid">
+            <article class="projects_card">
+              <a href="" target="_blank" class="projects_img">
+                <img src="images/placeholder.jpg" alt="">
+              </a>
+              <div class="projects_data">
+                <h3 class="projects_name">Test</h3>
+                <p class="projects_description">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, dolor.
+                </p>
+                <div class="projects_skills">
+                  <img src="images/html.svg" alt="" class="projects_skill">
+                  <img src="images/css.svg" alt="" class="projects_skill">
+                  <img src="images/js.svg" alt="" class="projects_skill">
+                </div>
+                <a href="#" target="_blank" class="projects_button">
+                  <i class="fa fa-link"></i>
+                  <span>Visit Project</span>
+                </a>
+              </div>
+            </article>
+            <article class="projects_card">
+              <a href="" target="_blank" class="projects_img">
+                <img src="images/placeholder.jpg" alt="">
+              </a>
+              <div class="projects_data">
+                <h3 class="projects_name">Test</h3>
+                <p class="projects_description">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, dolor.
+                </p>
+                <div class="projects_skills">
+                  <img src="images/html.svg" alt="" class="projects_skill">
+                  <img src="images/css.svg" alt="" class="projects_skill">
+                  <img src="images/js.svg" alt="" class="projects_skill">
+                </div>
+                <a href="#" target="_blank" class="projects_button">
+                  <i class="fa fa-link"></i>
+                  <span>Visit Project</span>
+                </a>
+              </div>
+            </article>
+            <article class="projects_card">
+              <a href="" target="_blank" class="projects_img">
+                <img src="images/placeholder.jpg" alt="">
+              </a>
+              <div class="projects_data">
+                <h3 class="projects_name">Test</h3>
+                <p class="projects_description">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, dolor.
+                </p>
+                <div class="projects_skills">
+                  <img src="images/html.svg" alt="" class="projects_skill">
+                  <img src="images/css.svg" alt="" class="projects_skill">
+                  <img src="images/js.svg" alt="" class="projects_skill">
+                </div>
+                <a href="#" target="_blank" class="projects_button">
+                  <i class="fa fa-link"></i>
+                  <span>Visit Project</span>
+                </a>
+              </div>
+            </article>
+            <article class="projects_card">
+              <a href="" target="_blank" class="projects_img">
+                <img src="images/placeholder.jpg" alt="">
+              </a>
+              <div class="projects_data">
+                <h3 class="projects_name">Test</h3>
+                <p class="projects_description">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, dolor.
+                </p>
+                <div class="projects_skills">
+                  <img src="images/html.svg" alt="" class="projects_skill">
+                  <img src="images/css.svg" alt="" class="projects_skill">
+                  <img src="images/js.svg" alt="" class="projects_skill">
+                </div>
+                <a href="#" target="_blank" class="projects_button">
+                  <i class="fa fa-link"></i>
+                  <span>Visit Project</span>
+                </a>
+              </div>
+            </article>
+            <article class="projects_card">
+              <a href="" target="_blank" class="projects_img">
+                <img src="images/placeholder.jpg" alt="">
+              </a>
+              <div class="projects_data">
+                <h3 class="projects_name">Test</h3>
+                <p class="projects_description">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, dolor.
+                </p>
+                <div class="projects_skills">
+                  <img src="images/html.svg" alt="" class="projects_skill">
+                  <img src="images/css.svg" alt="" class="projects_skill">
+                  <img src="images/js.svg" alt="" class="projects_skill">
+                </div>
+                <a href="#" target="_blank" class="projects_button">
+                  <i class="fa fa-link"></i>
+                  <span>Visit Project</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section class="random section"></section>
+    </main>
+    <div class="toggle-btn" id="btn">
+      <span id="btnText">Dark</span>
+      <i class="toggle-icon fa-solid fa-moon"></i>
+    </div>
+    <script src="js/test.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/darkmode.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
+  </body>
+</html>
