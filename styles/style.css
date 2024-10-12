@@ -11,7 +11,7 @@
     --bg2-color: #222222;
     --bg3-color: #393939;
     --text1-color: #ffffff;
-    --text2-color: #e9e9e9; 
+    --text2-color: #dbdbdb; 
     --skin-color: #ec1839;
 }
 body{
@@ -105,7 +105,7 @@ ul{
 }
 .aside .logo{
     position: absolute;
-    top: 20px;
+    top: 30px;
     font-size: 30px;
     text-transform: capitalize;
 }
@@ -177,7 +177,7 @@ ul{
     margin-bottom: 20px;
 }
 .aside .nav li a{
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 600;
     display: block;
     border-bottom: 1px solid var(--bg3-color);
@@ -420,7 +420,7 @@ h3.about-short{
     position: fixed;
     z-index: 9999999999;
     right: 20px;
-    top: 60px;
+    top: 20px;
     gap: 10px;
     padding: 15px;
     color: var(--text1-color);
@@ -635,9 +635,6 @@ button:hover{
     }
 }
 @media (max-width: 600px){
-    .section{
-        padding: 0;
-    }
     .home{
         padding: 20px;
     }
@@ -647,11 +644,6 @@ button:hover{
     .documentation2{
         padding: 20px;
         margin-top: 20px;
-    }
-}
-@media (max-width: 670px){
-    .about-title{
-        margin-top: 70px;
     }
 }
 @media (max-width: 450px){
@@ -713,7 +705,7 @@ button:hover{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 180px;
+    height: 150px;
     width: 100%;
     box-sizing: border-box;
 }
@@ -746,19 +738,11 @@ button:hover{
     .skills .skill-container .skill-row {
         grid-template-columns: repeat(3, 1fr); /* 3 columns for smaller screens */
     }
-
-    /* Make the last child span across 3 columns for 3-column layout */
-    .skills .skill-container .skill-row .skillbar:nth-last-child(1) {
-        grid-column: span 3;
-    }
     .skills, .about{
         justify-content: flex-start;
     }
     .projects-container{
         grid-template-columns: repeat(2, 1fr) !important;
-    }
-    .section{
-        position: static !important;
     }
 }
 .none{
@@ -767,7 +751,7 @@ button:hover{
 
 @media (max-width: 600px) {
     .skills .skill-container .skill-row {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for mobile */
+        grid-template-columns: repeat(2, 1fr); 
     }
 
     /* Remove the column span for 2-column layout, making the last box normal size */
@@ -785,11 +769,14 @@ button:hover{
         height: auto;
         border-radius: 10rem;
     }
+    .skills .skill-container .skill-row .skillbar:nth-last-child(1) {
+        grid-column: span 2;
+    }
 }
 
 @media (max-width: 400px) {
     .skills .skill-container .skill-row {
-        grid-template-columns: repeat(1, 1fr); /* 1 column for very small screens */
+        grid-template-columns: repeat(1, 1fr); 
     }
 
     /* No need for grid-column, last item will fill the space automatically */
@@ -840,6 +827,7 @@ button:hover{
 .projects_name {
     font-size: 20px;
     color: var(--text1-color);
+    margin-bottom: 1rem;
 }
 
 .projects_description {
@@ -859,7 +847,7 @@ button:hover{
 .projects_skills {
     width: max-content;
     height: 34px;
-    background: black;
+    background: var(--bg1-color);
     display: flex;
     align-items: center;
     column-gap: .75rem;
@@ -897,4 +885,12 @@ img {
 .grid {
     display: grid;
     gap: 1.5rem;
+}
+.underline-first-word {
+    border-bottom: 4px solid var(--skin-color);
+  }
+  
+
+.text{
+    color: var(--skin-color);
 }
