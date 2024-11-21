@@ -1,11 +1,16 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() { 
     const nav = document.querySelector(".nav");
     const navlist = nav ? nav.querySelectorAll("li") : [];
     const totalNavlist = navlist.length;
     const allSection = document.querySelectorAll(".section");
     const totalSection = allSection.length;
+    const navTogglerBtn = document.querySelector(".toggle");
+    const aside = document.querySelector("aside");
+    const allSections = document.querySelectorAll(".section");
+    const homeImgContainer = document.querySelector(".home-img-container");
+    const toggleBtn = document.querySelector(".toggle-btn");  // Dark mode/Light mode button
+    const languageSwitcher = document.getElementById("languageSwitcher");  // Language switcher element
 
-    // Function to handle navigation clicks and active class management
     function handleNavClick(event) {
         const element = event.target;
         for (let i = 0; i < totalSection; i++) {
@@ -19,18 +24,19 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         element.classList.add("active");
         showSection(element);
+        
+        // Close the navigation if screen width is less than 1200
         if (window.innerWidth < 1200) {
             asideSectionToggleBtn();
+            handleToggleBtnVisibility();  // Ensure buttons are shown when navigation closes
         }
     }
 
-    // Setup event listeners for navigation links
     for (let i = 0; i < totalNavlist; i++) {
         const a = navlist[i].querySelector("a");
         a.addEventListener("click", handleNavClick);
     }
 
-    // Show the target section
     function showSection(element) {
         for (let i = 0; i < totalSection; i++) {
             allSection[i].classList.remove("active");
@@ -39,7 +45,6 @@ document.addEventListener("DOMContentLoaded", function() {
         document.querySelector("#" + target).classList.add("active");
     }
 
-    // Handle special buttons like "Projects" to trigger section navigation
     const specialButtons = document.querySelectorAll(".btn.contact-me, .btn.contact-me2");
     specialButtons.forEach(button => {
         button.addEventListener("click", function(event) {
@@ -50,25 +55,32 @@ document.addEventListener("DOMContentLoaded", function() {
                 handleNavClick({ target: targetNavLink });
             }
             window.location.hash = target;
+
+            if (window.innerWidth < 900 && aside.classList.contains("open")) {
+                asideSectionToggleBtn();
+                handleToggleBtnVisibility();  // Ensure buttons are shown when navigation closes
+            }
         });
     });
-
-    // Toggling aside and home image for smaller screens
-    const navTogglerBtn = document.querySelector(".toggle");
-    const aside = document.querySelector("aside");
-    const allSections = document.querySelectorAll(".section");
-    const homeImgContainer = document.querySelector(".home-img-container");
 
     navTogglerBtn.addEventListener("click", () => {
         asideSectionToggleBtn();
         toggleHomeImage();
+        handleToggleBtnVisibility();  // Handle visibility of the toggle button and language switcher
     });
 
     function asideSectionToggleBtn() {
+        const screenWidth = window.innerWidth;
+
         aside.classList.toggle("open");
         navTogglerBtn.classList.toggle("open");
+
         for (let i = 0; i < allSections.length; i++) {
-            allSections[i].classList.toggle("open");
+            if (screenWidth > 800) {
+                allSections[i].classList.toggle("open");
+            } else {
+                allSections[i].classList.remove("open");
+            }
         }
     }
 
@@ -78,7 +90,17 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // Add event listener for the logo to reset to home section
+    // Updated function to hide/show language switcher and toggle button
+    function handleToggleBtnVisibility() {
+        if (window.innerWidth <= 530 && aside.classList.contains("open")) {
+            toggleBtn.style.visibility = "hidden";  // Hide dark mode/light mode button
+            languageSwitcher.style.visibility = "hidden";  // Hide language switcher
+        } else {
+            toggleBtn.style.visibility = "visible";  // Show dark mode/light mode button
+            languageSwitcher.style.visibility = "visible";  // Show language switcher
+        }
+    }
+
     const logo = document.querySelector(".logo a");
     logo.addEventListener("click", function(event) {
         event.preventDefault();
@@ -95,11 +117,11 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         if (window.innerWidth < 1200) {
             asideSectionToggleBtn();
+            handleToggleBtnVisibility();  // Ensure buttons are shown when navigation closes
         }
         window.location.hash = "#home";
     });
 
-    // Ensure correct section is shown if hash is present in URL
     const hash = window.location.hash;
     if (hash) {
         const targetSection = document.querySelector(hash);
@@ -117,12 +139,5 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
-document.addEventListener("DOMContentLoaded", function () {
-    var type = new Typed('.typing', {
-        strings: ['Frontend Developer', 'ICT student', 'Web Designer'],
-        typeSpeed: 100,
-        backSpeed: 100,
-        backDelay: 100,
-        loop: true
-    });
-});
+
+

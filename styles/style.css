@@ -389,6 +389,8 @@ h3.about-short{
     .aside .toggle{
         display: flex;
         left: 30px;
+        height: 50px;
+        width: 50px;
     }
     .section.open{
         left: 270px;
@@ -761,17 +763,54 @@ button:hover{
     .projects-container{
         grid-template-columns: repeat(1, 1fr) !important;
     }
-    #btnText{
-        display: none;
-    }
-    .toggle-btn{
-        width: auto;
-        height: auto;
-        border-radius: 10rem;
-    }
     .skills .skill-container .skill-row .skillbar:nth-last-child(1) {
         grid-column: span 2;
     }
+}
+@media (max-width: 740px) {
+    #btnText{
+        display: none;
+    }
+    .etext{
+        display: none !important;
+    }
+    .dropdown-icon{
+        display: none !important;
+    }
+    .language-switch{
+        width: 55px !important;
+        height: 55px !important;
+        border-radius: 10rem !important;
+    }
+    .language-option{
+        width: 55px !important;
+        height: 55px !important;
+        border-radius: 10rem !important;
+    }
+    .language-dropdown{
+        width: 55px !important;
+        height: 55px !important;
+        border-radius: 10rem !important;
+    }
+    .language-dropdown{
+        top: 70px !important;
+    }
+    .toggle-btn{
+        width: 55px;
+        height: 55px;
+        border-radius: 10rem;
+        position: relative !important;
+        top: 0px !important;
+    }
+    .switch-box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; 
+      }
+      .language-switch{
+        position: relative !important;
+        top: 0px !important;
+      }
 }
 
 @media (max-width: 400px) {
@@ -782,6 +821,10 @@ button:hover{
     /* No need for grid-column, last item will fill the space automatically */
     .skills .skill-container .skill-row .skillbar:nth-last-child(1) {
         grid-column: span 1;
+    }
+    .projects-container{
+        padding-left: 8px !important;
+        padding-right: 8px !important;
     }
 }
 .projects {
@@ -801,27 +844,39 @@ button:hover{
 /* Projects section */
 .projects_card {
     background: var(--bg2-color);
-    padding: 1.5rem;
-    border-radius: 2rem;
-    overflow: hidden; /* Ensure the image does not overflow the card */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
 }
+.projects_data {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; 
+  }
+  
+  .projects_button i {
+    margin-right: 5px; 
+  }
 
 .projects_img {
     display: block;
     border-radius: 1.5rem;
-    overflow: hidden; /* Ensure the image stays within bounds */
+    overflow: hidden; 
     margin-bottom: 1.5rem;
     position: relative;
 }
 
 .projects_img img {
     transition: transform 0.4s ease-in-out;
-    width: 100%; /* Keep the image full width within the container */
+    width: 100%; 
     height: auto;
 }
 
 .projects_card:hover .projects_img img {
-    transform: scale(1.2); /* Only scale the image */
+    transform: scale(1.2); 
 }
 
 .projects_name {
@@ -856,14 +911,6 @@ button:hover{
     border-radius: 4rem;
 }
 
-.projects_button {
-    color: white;
-    display: inline-flex;
-    align-items: center;
-    column-gap: .5rem;
-    transition: color .4s;
-}
-
 .projects_button i {
     font-size: 1.25rem;
 }
@@ -894,3 +941,143 @@ img {
 .text{
     color: var(--skin-color);
 }
+@media (max-width: 500px) {
+    .aside.open .toggle-btn {
+        display: none !important;  /* Force hiding the button */
+    }
+}
+@media (max-width: 800px) {
+    aside {
+      position: fixed; /* Fixed position so it overlays */
+      width: 250px; /* Same width */
+      top: 0;
+      left: -100%; /* Hidden initially */
+      height: 100%;
+      z-index: 1000; /* Ensure it is on top of the content */
+      transition: left 0.3s ease-in-out;
+    }
+  
+    aside.open {
+      left: 0; /* Slide in from the left */
+    }
+  
+    .pri-content {
+      margin-left: 0; /* Don't shift content at all */
+      transition: all 0.3s ease-in-out;
+    }
+  
+    .pri-content.open {
+      margin-left: 0; /* No shifting for content */
+    }
+  }
+  @media (max-width: 460px) {
+    h3.welcome{
+        font-size: 18px;
+    }
+    h3.welcome span{
+        font-size: 18px;
+    }
+    h3.about-short{
+        font-size: 18px;
+    }
+    .home-text p{
+        font-size: 18px;
+    }
+  }
+  @media (max-width: 530px) {
+   .skill-title2, .skill-title, .about-title{
+    font-size: 30px;
+   }
+   #projects, #about, #skills{
+    padding-top: 90px;
+   }
+  }
+  @media (max-width: 450px) {
+    .skill-title2, .skill-title2, .about-title{
+     font-size: 20px;
+    }
+   }
+/* Language Switcher */
+.language-switch {
+    position: fixed;
+    top: 70px; /* Below the dark mode toggle */
+    right: 30px;
+    background-color: var(--bg2-color);
+    color: var(--text1-color);
+    border-radius: 20px;
+    width: 150px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
+    cursor: pointer;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    z-index: 9999999999;
+  }
+  
+  .language-switch .selected-language {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .language-switch .flag {
+    width: 20px;
+    height: auto;
+  }
+  
+  .language-dropdown {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: var(--bg2-color);
+    color: var(--text1-color);
+    border-radius: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 9999999999;
+    width: 150px; 
+  }
+  
+  .language-dropdown li {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center; 
+    cursor: pointer;
+    height: 40px; 
+  }
+  
+  .language-dropdown li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .language-dropdown .flag {
+    width: 20px;
+    height: auto;
+  }
+  
+  .language-dropdown.show {
+    display: block; 
+  }
+  .container-mains {
+    position: fixed;
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;       
+    padding-top: 20px;
+    gap: 10px;     
+  }
+  .projects_button {
+    margin-top: auto; 
+    display: inline-flex;
+    color: white;
+    border-radius: 5px;
+    gap: 8px;
+    text-decoration: none;
+  }

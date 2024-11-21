@@ -18,7 +18,6 @@
     />
     <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link rel="manifest" href="manifest.webmanifest">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <script src="app.js" defer></script>
   </head>
   <body>
@@ -65,12 +64,12 @@
           <a target="_blank" href="https://www.youtube.com/channel/UCBW35VZHEL9annDyu3Ci5MQ"
             ><i class="fa-brands fa-youtube"></i
           ></a>
-          <a target="_blank" href="https://git.fhict.nl/I523591/paragon"
+          <a target="_blank" href="www.linkedin.com/in/thijs-van-den-broek-aa1aa4245"
           ><i class="fa-brands fa-linkedin"></i></a>
         </div>
-        <div class="download">
+        <!-- <div class="download">
         <button class="face button tooltip3" id="btnAdd" style="display: none;">Install <i class="fa-solid fa-cloud-arrow-down"></i></button>
-      </div>
+      </div> -->
       </aside>
       <section class="pri-content">
         <article class="home active section" id="home">
@@ -220,7 +219,7 @@
 
 
         <section class="projects section" id="projects">
-          <h2 class="about-title skill-title">Recent <span class="span">Projects</span></h2>
+          <h2 class="about-title skill-title2">Recent <span class="span">Projects</span></h2>
           <div class="projects-container containerp grid">
             <article class="projects_card">
               <a href="https://e-postpro.vercel.app/" target="_blank" class="projects_img">
@@ -240,7 +239,7 @@
                 </div>
                 <a href="https://e-postpro.vercel.app/" target="_blank" class="projects_button">
                   <i class="fa fa-link"></i>
-                  <span>Visit Project</span>
+                  <span> Visit Project</span>
                 </a>
               </div>
             </article>
@@ -264,7 +263,7 @@
                 </div>
                 <a href="https://youtu.be/hMK0f0T0WjY?si=myakuFhiZxZigXVA" target="_blank" class="projects_button">
                   <i class="fa fa-link"></i>
-                  <span>Visit Project</span>
+                  <span> Visit Project</span>
                 </a>
               </div>
             </article>
@@ -288,19 +287,19 @@
               </div>
             </article>
             <article class="projects_card">
-              <a href="https://drive.google.com/file/d/1lSkpycosgSXUqQuf5fhPQ1HaG5R9kVXb/view?usp=sharing" target="_blank" class="projects_img">
-                <img src="images/photobook.png" alt="">
+              <a href="https://youtu.be/UzhChpyY6bs" target="_blank" class="projects_img">
+                <img src="images/bot.png" alt="">
               </a>
               <div class="projects_data">
-                <h3 class="projects_name">My <span class="text">photobook</span></h3>
+                <h3 class="projects_name">Workout <span class="text">Chatbot</span></h3>
                 <p class="projects_description">
-                  This project is a creative and inspiring photobook where I showcase my photography skills with a camera through various stunning shots and unique compositions.
+                  This project is an innovative and dynamic chatbot designed to provide personalized workout advice based on user input. Talk or chat with the AI
                 </p>
                 <div class="projects_skills">
                   <img src="images/google.svg" alt="" class="projects_skill">
-                  <img src="images/id.svg" alt="" class="projects_skill">
-                  <img src="images/ps.svg" alt="" class="projects_skill">
-                  <img src="images/ai.svg" alt="" class="projects_skill">
+                  <img src="images/figma.svg" alt="" class="projects_skill">
+                  <img src="images/kotlin.svg" alt="" class="projects_skill">
+                  <img src="images/xml.svg" alt="" class="projects_skill">
                   <img src="images/uxui.svg" alt="" class="projects_skill">
                 </div>
                 <a href="https://drive.google.com/file/d/1lSkpycosgSXUqQuf5fhPQ1HaG5R9kVXb/view?usp=sharing" target="_blank" class="projects_button">
@@ -354,10 +353,31 @@
         </section>
         <section class="random section"></section>
     </main>
-    <div class="toggle-btn" id="btn">
-      <span id="btnText">Dark</span>
-      <i class="toggle-icon fa-solid fa-moon"></i>
+    <div class="container-mains" style="position: relative;">
+      <div class="toggle-btn" id="btn">
+        <span id="btnText">Dark</span>
+        <i class="toggle-icon fa-solid fa-moon"></i>
+      </div>
+      <div class="language-switch" id="languageSwitcher">
+        <div class="selected-language" onclick="toggleDropdown()">
+          <img src="images/english.png" alt="English Flag" class="flag" id="selectedFlag" />
+          <span class="etext" id="selectedLanguage">English</span>
+          <i class="fa fa-chevron-down dropdown-icon"></i>
+        </div>
+        <ul class="language-dropdown" id="languageDropdown">
+          <li class="language-option" data-lang="en" onclick="selectLanguage('en')">
+            <img src="images/english.png" alt="English Flag" class="flag" />
+            <span class="etext">EN</span>
+          </li>
+          <li class="language-option" data-lang="nl" onclick="selectLanguage('nl')">
+            <img src="images/dutch.png" alt="Dutch Flag" class="flag" />
+            <span class="etext">NL</span>
+          </li>
+        </ul>
+      </div>
     </div>
+    
+    
     <script src="js/test.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -365,5 +385,7 @@
     <script src="js/darkmode.js"></script>
     <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
     <script src="js/line.js"></script>
+    <script src="js/lg.js"></script>
+    <script src="js/translate.js"></script>
   </body>
 </html>
